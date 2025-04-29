@@ -47,10 +47,15 @@ message ListTasksResponse {
   uint32 total_count = 2;
 }
 
+message ListTasksByUserRequest {
+  uint32 user_id = 1;
+}
+
 service TaskService {
   rpc CreateTask (CreateTaskRequest) returns (CreateTaskResponse);
   rpc GetTask (GetTaskRequest) returns (Task);
   rpc UpdateTask (UpdateTaskRequest) returns (UpdateTaskResponse);
   rpc DeleteTask (DeleteTaskRequest) returns (DeleteTaskResponse);
   rpc ListTasks (google.protobuf.Empty)  returns (ListTasksResponse);
+  rpc ListTasksByUser(ListTasksByUserRequest) returns (ListTasksResponse);
 }
