@@ -2,6 +2,8 @@ syntax = "proto3";
 package user;
 option go_package = "github.com/Imnarka/project-protos/proto/user";
 
+import "google/protobuf/empty.proto";
+
 message User {
   uint32 id    = 1;
   string email = 2;
@@ -47,8 +49,8 @@ message ListUsersResponse {
 
 service UserService {
   rpc CreateUser (CreateUserRequest) returns (CreateUserResponse);
-  rpc GetUser    (GetUserRequest)              returns (User);
+  rpc GetUser (GetUserRequest) returns (User);
   rpc UpdateUser (UpdateUserRequest) returns (UpdateUserResponse);
   rpc DeleteUser (DeleteUserRequest) returns (DeleteUserResponse);
-  rpc ListUsers  (ListUsersRequest)  returns (ListUsersResponse);
+  rpc ListUsers (google.protobuf.Empty)  returns (ListUsersResponse);
 }

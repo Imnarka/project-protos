@@ -2,6 +2,8 @@ syntax = "proto3";
 package task;
 option go_package = "github.com/Imnarka/project-protos/proto/task";
 
+import "google/protobuf/empty.proto";
+
 message Task {
   uint32 id      = 1;
   string title   = 2;
@@ -48,8 +50,8 @@ message ListTasksResponse {
 
 service TaskService {
   rpc CreateTask (CreateTaskRequest) returns (CreateTaskResponse);
-  rpc GetTask    (GetTaskRequest)   returns (Task);
+  rpc GetTask (GetTaskRequest) returns (Task);
   rpc UpdateTask (UpdateTaskRequest) returns (UpdateTaskResponse);
   rpc DeleteTask (DeleteTaskRequest) returns (DeleteTaskResponse);
-  rpc ListTasks  (ListTasksRequest)  returns (ListTasksResponse);
+  rpc ListTasks (google.protobuf.Empty)  returns (ListTasksResponse);
 }

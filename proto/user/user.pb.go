@@ -9,6 +9,7 @@ package user
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	emptypb "google.golang.org/protobuf/types/known/emptypb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -497,7 +498,7 @@ var File_proto_user_user_proto protoreflect.FileDescriptor
 
 const file_proto_user_user_proto_rawDesc = "" +
 	"\n" +
-	"\x15proto/user/user.proto\x12\x04user\",\n" +
+	"\x15proto/user/user.proto\x12\x04user\x1a\x1bgoogle/protobuf/empty.proto\",\n" +
 	"\x04User\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email\" \n" +
@@ -535,7 +536,7 @@ const file_proto_user_user_proto_rawDesc = "" +
 	"UpdateUser\x12\x17.user.UpdateUserRequest\x1a\x18.user.UpdateUserResponse\x12?\n" +
 	"\n" +
 	"DeleteUser\x12\x17.user.DeleteUserRequest\x1a\x18.user.DeleteUserResponse\x12<\n" +
-	"\tListUsers\x12\x16.user.ListUsersRequest\x1a\x17.user.ListUsersResponseB.Z,github.com/Imnarka/project-protos/proto/userb\x06proto3"
+	"\tListUsers\x12\x16.google.protobuf.Empty\x1a\x17.user.ListUsersResponseB.Z,github.com/Imnarka/project-protos/proto/userb\x06proto3"
 
 var (
 	file_proto_user_user_proto_rawDescOnce sync.Once
@@ -561,26 +562,27 @@ var file_proto_user_user_proto_goTypes = []any{
 	(*DeleteUserResponse)(nil), // 7: user.DeleteUserResponse
 	(*ListUsersRequest)(nil),   // 8: user.ListUsersRequest
 	(*ListUsersResponse)(nil),  // 9: user.ListUsersResponse
+	(*emptypb.Empty)(nil),      // 10: google.protobuf.Empty
 }
 var file_proto_user_user_proto_depIdxs = []int32{
-	0, // 0: user.CreateUserResponse.user:type_name -> user.User
-	0, // 1: user.UpdateUserResponse.user:type_name -> user.User
-	0, // 2: user.ListUsersResponse.users:type_name -> user.User
-	2, // 3: user.UserService.CreateUser:input_type -> user.CreateUserRequest
-	1, // 4: user.UserService.GetUser:input_type -> user.GetUserRequest
-	4, // 5: user.UserService.UpdateUser:input_type -> user.UpdateUserRequest
-	6, // 6: user.UserService.DeleteUser:input_type -> user.DeleteUserRequest
-	8, // 7: user.UserService.ListUsers:input_type -> user.ListUsersRequest
-	3, // 8: user.UserService.CreateUser:output_type -> user.CreateUserResponse
-	0, // 9: user.UserService.GetUser:output_type -> user.User
-	5, // 10: user.UserService.UpdateUser:output_type -> user.UpdateUserResponse
-	7, // 11: user.UserService.DeleteUser:output_type -> user.DeleteUserResponse
-	9, // 12: user.UserService.ListUsers:output_type -> user.ListUsersResponse
-	8, // [8:13] is the sub-list for method output_type
-	3, // [3:8] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	0,  // 0: user.CreateUserResponse.user:type_name -> user.User
+	0,  // 1: user.UpdateUserResponse.user:type_name -> user.User
+	0,  // 2: user.ListUsersResponse.users:type_name -> user.User
+	2,  // 3: user.UserService.CreateUser:input_type -> user.CreateUserRequest
+	1,  // 4: user.UserService.GetUser:input_type -> user.GetUserRequest
+	4,  // 5: user.UserService.UpdateUser:input_type -> user.UpdateUserRequest
+	6,  // 6: user.UserService.DeleteUser:input_type -> user.DeleteUserRequest
+	10, // 7: user.UserService.ListUsers:input_type -> google.protobuf.Empty
+	3,  // 8: user.UserService.CreateUser:output_type -> user.CreateUserResponse
+	0,  // 9: user.UserService.GetUser:output_type -> user.User
+	5,  // 10: user.UserService.UpdateUser:output_type -> user.UpdateUserResponse
+	7,  // 11: user.UserService.DeleteUser:output_type -> user.DeleteUserResponse
+	9,  // 12: user.UserService.ListUsers:output_type -> user.ListUsersResponse
+	8,  // [8:13] is the sub-list for method output_type
+	3,  // [3:8] is the sub-list for method input_type
+	3,  // [3:3] is the sub-list for extension type_name
+	3,  // [3:3] is the sub-list for extension extendee
+	0,  // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_proto_user_user_proto_init() }

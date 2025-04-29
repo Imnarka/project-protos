@@ -9,6 +9,7 @@ package task
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	emptypb "google.golang.org/protobuf/types/known/emptypb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -497,7 +498,7 @@ var File_proto_task_task_proto protoreflect.FileDescriptor
 
 const file_proto_task_task_proto_rawDesc = "" +
 	"\n" +
-	"\x15proto/task/task.proto\x12\x04task\",\n" +
+	"\x15proto/task/task.proto\x12\x04task\x1a\x1bgoogle/protobuf/empty.proto\",\n" +
 	"\x04Task\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\")\n" +
@@ -535,7 +536,7 @@ const file_proto_task_task_proto_rawDesc = "" +
 	"UpdateTask\x12\x17.task.UpdateTaskRequest\x1a\x18.task.UpdateTaskResponse\x12?\n" +
 	"\n" +
 	"DeleteTask\x12\x17.task.DeleteTaskRequest\x1a\x18.task.DeleteTaskResponse\x12<\n" +
-	"\tListTasks\x12\x16.task.ListTasksRequest\x1a\x17.task.ListTasksResponseB.Z,github.com/Imnarka/project-protos/proto/taskb\x06proto3"
+	"\tListTasks\x12\x16.google.protobuf.Empty\x1a\x17.task.ListTasksResponseB.Z,github.com/Imnarka/project-protos/proto/taskb\x06proto3"
 
 var (
 	file_proto_task_task_proto_rawDescOnce sync.Once
@@ -561,26 +562,27 @@ var file_proto_task_task_proto_goTypes = []any{
 	(*DeleteTaskResponse)(nil), // 7: task.DeleteTaskResponse
 	(*ListTasksRequest)(nil),   // 8: task.ListTasksRequest
 	(*ListTasksResponse)(nil),  // 9: task.ListTasksResponse
+	(*emptypb.Empty)(nil),      // 10: google.protobuf.Empty
 }
 var file_proto_task_task_proto_depIdxs = []int32{
-	0, // 0: task.CreateTaskResponse.task:type_name -> task.Task
-	0, // 1: task.UpdateTaskResponse.task:type_name -> task.Task
-	0, // 2: task.ListTasksResponse.tasks:type_name -> task.Task
-	1, // 3: task.TaskService.CreateTask:input_type -> task.CreateTaskRequest
-	3, // 4: task.TaskService.GetTask:input_type -> task.GetTaskRequest
-	4, // 5: task.TaskService.UpdateTask:input_type -> task.UpdateTaskRequest
-	6, // 6: task.TaskService.DeleteTask:input_type -> task.DeleteTaskRequest
-	8, // 7: task.TaskService.ListTasks:input_type -> task.ListTasksRequest
-	2, // 8: task.TaskService.CreateTask:output_type -> task.CreateTaskResponse
-	0, // 9: task.TaskService.GetTask:output_type -> task.Task
-	5, // 10: task.TaskService.UpdateTask:output_type -> task.UpdateTaskResponse
-	7, // 11: task.TaskService.DeleteTask:output_type -> task.DeleteTaskResponse
-	9, // 12: task.TaskService.ListTasks:output_type -> task.ListTasksResponse
-	8, // [8:13] is the sub-list for method output_type
-	3, // [3:8] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	0,  // 0: task.CreateTaskResponse.task:type_name -> task.Task
+	0,  // 1: task.UpdateTaskResponse.task:type_name -> task.Task
+	0,  // 2: task.ListTasksResponse.tasks:type_name -> task.Task
+	1,  // 3: task.TaskService.CreateTask:input_type -> task.CreateTaskRequest
+	3,  // 4: task.TaskService.GetTask:input_type -> task.GetTaskRequest
+	4,  // 5: task.TaskService.UpdateTask:input_type -> task.UpdateTaskRequest
+	6,  // 6: task.TaskService.DeleteTask:input_type -> task.DeleteTaskRequest
+	10, // 7: task.TaskService.ListTasks:input_type -> google.protobuf.Empty
+	2,  // 8: task.TaskService.CreateTask:output_type -> task.CreateTaskResponse
+	0,  // 9: task.TaskService.GetTask:output_type -> task.Task
+	5,  // 10: task.TaskService.UpdateTask:output_type -> task.UpdateTaskResponse
+	7,  // 11: task.TaskService.DeleteTask:output_type -> task.DeleteTaskResponse
+	9,  // 12: task.TaskService.ListTasks:output_type -> task.ListTasksResponse
+	8,  // [8:13] is the sub-list for method output_type
+	3,  // [3:8] is the sub-list for method input_type
+	3,  // [3:3] is the sub-list for extension type_name
+	3,  // [3:3] is the sub-list for extension extendee
+	0,  // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_proto_task_task_proto_init() }
