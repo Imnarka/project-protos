@@ -6,11 +6,14 @@ import "google/protobuf/empty.proto";
 
 message Task {
   uint32 id      = 1;
-  string title   = 2;
+  uint32 UserId  = 2;
+  string title   = 3;
+  bool   is_done = 4;
 }
 
 message CreateTaskRequest {
   string title = 1;
+  uint32 UserId = 2;
 }
 
 message CreateTaskResponse {
@@ -24,6 +27,7 @@ message GetTaskRequest {
 message UpdateTaskRequest {
   uint32 id      = 1;
   string title   = 2;
+  bool is_done = 3;
 }
 
 message UpdateTaskResponse {
@@ -36,11 +40,6 @@ message DeleteTaskRequest {
 
 message DeleteTaskResponse {
   bool success = 1;
-}
-
-message ListTasksRequest {
-  uint32 page = 1;
-  uint32 page_size = 2;
 }
 
 message ListTasksResponse {
